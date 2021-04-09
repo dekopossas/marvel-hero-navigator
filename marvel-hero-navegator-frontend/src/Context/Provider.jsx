@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import PropTypes from 'prop-types';
-import ContextAPI from './ContextAPI'
+import ContextAPI from './Context';
 
 function GlobalProvider({ children }) {
   const [login, setLogin] = useState([]);
