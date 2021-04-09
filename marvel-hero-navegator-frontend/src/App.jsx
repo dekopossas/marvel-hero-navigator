@@ -1,10 +1,14 @@
 import React from 'react';
-import { BrowserRouter } from 'react-router-dom';
+import { BrowserRouter, Route } from 'react-router-dom';
+import Provider from './Context/Provider';
+import Login from './pages/Login';
 
 function App() {
   return (
     <BrowserRouter>
-      marvel hero navegator
+      <Provider>
+        <Route exact path="/login" component={Login} />
+      </Provider>
     </BrowserRouter>
   );
 }
