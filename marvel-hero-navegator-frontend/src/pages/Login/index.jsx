@@ -12,6 +12,7 @@ function Login() {
             type="email"
             id="email"
             data-testid="email-input"
+            placeholder="Email"
           />
         </label>
         <label htmlFor="password">
@@ -19,6 +20,7 @@ function Login() {
             className="form-control"
             type="password"
             id="password"
+            placeholder="Senha"
             data-testid="password-input"
           />
         </label>
@@ -33,7 +35,7 @@ function Login() {
         <button
           to="/register"
           data-testid="no-account-btn"
-          className="btn btn-lg btn-primary"
+          className="btn btn-lg btn-primary btn-block"
           type="button"
         >
           Register
