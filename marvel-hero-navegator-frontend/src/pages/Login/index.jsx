@@ -1,5 +1,4 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
 
 function Login() {
   return (
@@ -32,13 +31,14 @@ function Login() {
           Entrar
         </button>
         <br />
-        <Link
+        <button
           to="/register"
           data-testid="no-account-btn"
-          className="cadastrar"
+          className="btn btn-lg btn-primary"
+          type="button"
         >
           Register
-        </Link>
+        </button>
         <p className="mt-5 mb-3 text-muted">
           © Marvel Hero Navegator 2021
         </p>
