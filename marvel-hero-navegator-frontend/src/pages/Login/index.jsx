@@ -1,11 +1,12 @@
 import React from 'react';
 import { Button, HStack, Stack } from '@chakra-ui/react';
 import { FaFacebook, FaTwitter } from 'react-icons/fa';
+import { Link } from 'react-router-dom';
 
 function Login() {
   return (
     <div className="text-center">
-      <Stack pl={1} mt={1} spacing={1}>
+      <Stack>
         <h1 className="h1 mb-3 font-weight-normal">Login</h1>
         <label htmlFor="email">
           <input
@@ -29,9 +30,16 @@ function Login() {
           Entrar
         </button>
         <br />
-        <Button colorScheme="blue" to="/register" data-testid="no-account-btn" type="button">
-          Register
-        </Button>
+        <Link to="/register">
+          <Button
+            colorScheme="blue"
+            to="/register"
+            data-testid="no-account-btn"
+            type="button"
+          >
+            Register
+          </Button>
+        </Link>
         <HStack>
           <Button colorScheme="facebook" leftIcon={<FaFacebook />}>
             Facebook
