@@ -32,7 +32,7 @@ function Login() {
             type="button"
             data-testid="signin-btn"
           >
-            Entrar
+            Join
           </Button>
         </Link>
         <br />
