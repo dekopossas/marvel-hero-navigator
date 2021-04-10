@@ -1,5 +1,5 @@
 import React from 'react';
-import { Button } from '@chakra-ui/react';
+import { Button, HStack } from '@chakra-ui/react';
 import { FaFacebook, FaTwitter } from 'react-icons/fa';
 
 function Login() {
@@ -32,12 +32,14 @@ function Login() {
         <Button colorScheme="blue" to="/register" data-testid="no-account-btn" type="button">
           Register
         </Button>
-        <Button colorScheme="facebook" leftIcon={<FaFacebook />}>
-          Facebook
-        </Button>
-        <Button colorScheme="twitter" leftIcon={<FaTwitter />}>
-          Twitter
-        </Button>
+        <HStack>
+          <Button colorScheme="facebook" leftIcon={<FaFacebook />}>
+            Facebook
+          </Button>
+          <Button colorScheme="twitter" leftIcon={<FaTwitter />}>
+            Twitter
+          </Button>
+        </HStack>
         <p className="mt-5 mb-3 text-muted">© Marvel Hero Navegator 2021</p>
       </form>
     </div>
