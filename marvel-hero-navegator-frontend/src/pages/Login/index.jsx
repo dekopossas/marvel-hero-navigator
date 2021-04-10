@@ -26,9 +26,15 @@ function Login() {
             data-testid="password-input"
           />
         </label>
-        <button className="btn btn-lg btn-danger btn-block" type="button" data-testid="signin-btn">
-          Entrar
-        </button>
+        <Link to="/home">
+          <Button
+            colorScheme="green"
+            type="button"
+            data-testid="signin-btn"
+          >
+            Entrar
+          </Button>
+        </Link>
         <br />
         <Link to="/register">
           <Button
