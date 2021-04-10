@@ -1,0 +1,36 @@
+version: '3.7'
+
+services:
+  mongodb:
+    image: mongo:4.4.3
+    restart: always
+    networks:
+      - warlock-network
+  # back-api:
+  #   build: marvel-hero-navegator-backend/.
+  #   ports:
+  #     - "9000:9000"
+  #   # env_file:
+  #   #   - ./.env
+  #   depends_on:
+  #     - mongodb
+  #   volumes:
+  #     - ./:/usr/src
+  #   networks:
+  #     - warlock-network
+  front-api:
+    build: marvel-hero-navegator-frontend/.
+    ports:
+      - '80:80'
+    # env_file:
+    #   - ./.env
+    # depends_on:
+    #   - back-api
+    restart: always
+    volumes:
+      - ./:/usr/src
+    networks:
+      - warlock-network
+networks:
+  warlock-network:
+    driver: bridge
