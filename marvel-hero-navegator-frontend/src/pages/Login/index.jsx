@@ -1,5 +1,6 @@
 import React from 'react';
-import './login.css';
+import { Button } from '@chakra-ui/react';
+import { FaFacebook, FaTwitter } from 'react-icons/fa';
 
 function Login() {
   return (
@@ -24,25 +25,20 @@ function Login() {
             data-testid="password-input"
           />
         </label>
-        <button
-          className="btn btn-lg btn-danger btn-block"
-          type="button"
-          data-testid="signin-btn"
-        >
+        <button className="btn btn-lg btn-danger btn-block" type="button" data-testid="signin-btn">
           Entrar
         </button>
         <br />
-        <button
-          to="/register"
-          data-testid="no-account-btn"
-          className="btn btn-lg btn-primary btn-block"
-          type="button"
-        >
+        <Button colorScheme="blue" to="/register" data-testid="no-account-btn" type="button">
           Register
-        </button>
-        <p className="mt-5 mb-3 text-muted">
-          © Marvel Hero Navegator 2021
-        </p>
+        </Button>
+        <Button colorScheme="facebook" leftIcon={<FaFacebook />}>
+          Facebook
+        </Button>
+        <Button colorScheme="twitter" leftIcon={<FaTwitter />}>
+          Twitter
+        </Button>
+        <p className="mt-5 mb-3 text-muted">© Marvel Hero Navegator 2021</p>
       </form>
     </div>
   );
