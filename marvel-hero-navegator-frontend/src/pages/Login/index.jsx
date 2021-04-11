@@ -19,32 +19,27 @@ function Login() {
     <div className="text-center">
       <Stack spacing={3}>
         <Text fontSize="5xl">Login</Text>
-        <label htmlFor="email">
-          <input
-            className="form-control"
-            type="email"
-            id="email"
-            data-testid="email-input"
-            placeholder="Email"
-          />
-        </label>
+        <Input
+          className="form-control"
+          type="email"
+          id="email"
+          data-testid="email-input"
+          placeholder="Email"
+        />
         <InputGroup size="md">
-          <Input pr="4.5rem" type={show ? 'text' : 'password'} placeholder="Enter password" />
+          <Input
+            pr="4.5rem"
+            type={show ? 'text' : 'password'}
+            placeholder="Enter password"
+            data-testid="password-input"
+            id="password"
+          />
           <InputRightElement width="4.5rem">
             <Button h="1.75rem" size="sm" onClick={handleClick}>
               {show ? 'Hide' : 'Show'}
             </Button>
           </InputRightElement>
         </InputGroup>
-        <label htmlFor="password">
-          <input
-            className="form-control"
-            type="password"
-            id="password"
-            placeholder="Senha"
-            data-testid="password-input"
-          />
-        </label>
         <Link to="/home">
           <Button colorScheme="green" type="button" data-testid="signin-btn">
             Join
