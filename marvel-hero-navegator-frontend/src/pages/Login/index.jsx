@@ -17,7 +17,7 @@ function Login() {
 
   return (
     <div className="text-center">
-      <Stack spacing={3}>
+      <Stack spacing={3} align="center">
         <Text fontSize="5xl">Login</Text>
         <Input
           className="form-control"
@@ -25,8 +25,9 @@ function Login() {
           id="email"
           data-testid="email-input"
           placeholder="Email"
+          width="300px"
         />
-        <InputGroup size="md">
+        <InputGroup size="md" width="300px">
           <Input
             pr="4.5rem"
             type={show ? 'text' : 'password'}
@@ -40,17 +41,20 @@ function Login() {
             </Button>
           </InputRightElement>
         </InputGroup>
-        <Link to="/home">
-          <Button colorScheme="green" type="button" data-testid="signin-btn">
-            Join
+        <Stack spacing={2} align="center">
+          <Button width="300px" colorScheme="green" type="button" data-testid="signin-btn">
+            <Link to="/home">Join</Link>
           </Button>
-        </Link>
-        <br />
-        <Link to="/register">
-          <Button colorScheme="blue" to="/register" data-testid="no-account-btn" type="button">
-            Register
+          <Button
+            width="300px"
+            colorScheme="blue"
+            to="/register"
+            data-testid="no-account-btn"
+            type="button"
+          >
+            <Link to="/register">Register</Link>
           </Button>
-        </Link>
+        </Stack>
         <HStack>
           <Button colorScheme="facebook" leftIcon={<FaFacebook />}>
             Facebook
