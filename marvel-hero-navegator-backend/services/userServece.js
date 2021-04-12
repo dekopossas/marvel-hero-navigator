@@ -1,3 +1,5 @@
+const userModel = require('../models/user');
+
 const BAD_REQUEST = 400;
 
 const validateEmail = (email) => {
@@ -48,6 +50,12 @@ const findByEmail = (email) => {
   usersList = getAllUsers();
   const emailFound = usersList.find((user) => user.email === email);
   return emailFound;
+};
+
+const createUser = async (name, email, password) => {
+  await userModel.createUser(name, email, password);
+  const user = { name, email, password };
+  return user;
 }
 
 module.exports = {
@@ -56,4 +64,5 @@ module.exports = {
   validateFieldLogin,
   getAllUsers,
   findByEmail,
+  createUser,
 };
