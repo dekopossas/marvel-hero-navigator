@@ -42,11 +42,11 @@ const validateFieldLogin = async (req, res, next) => {
   next();
 };
 
-const findUserByEmail = (email) => userModel.findUserByEmail(email);
+const getAllUsers = () => userModel.getAllUsers();
 
 module.exports = {
   validateUser,
   validateFieldName,
   validateFieldLogin,
-  findUserByEmail,
+  getAllUsers,
 };
