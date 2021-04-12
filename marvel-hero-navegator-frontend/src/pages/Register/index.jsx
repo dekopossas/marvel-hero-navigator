@@ -10,6 +10,8 @@ import {
 
 function Register() {
   const [show, setShow] = useState(false);
+  const [userName, setUserName] = useState('');
+  const [isUserNameValid, setIsUserNameValid] = useState(false);
   const [email, setEmail] = useState('');
   const [isEmailValid, setIsEmailValid] = useState(false);
   const [password, setPassword] = useState('');
@@ -38,12 +40,30 @@ function Register() {
     }
   };
 
-  const handleClickJoinBtn
+  const handleChangeName = (event, value) => {
+    setUserName(value);
+    const regex = /^[A-Za-z'\s]+$/;
+    const MIN_NAME_LENGTH = 3;
+    if (regex.test(value) && value.length >= MIN_NAME_LENGTH) {
+      setIsUserNameValid(true);
+    } else {
+      setIsUserNameValid(false);
+    }
+  };
+
+  const handleClickRegisterBtn = async () => {
+    const response = await api.fetchRegistration
+  }
 
   return (
     <div>
       <Stack spacing={3} align="center">
         <Text fontSize="5xl">Register</Text>
+        <Input
+          placeholder="Name"
+          width="300px"
+          onChange={handleChangeName}
+        />
         <Input
           placeholder="Email"
           width="300px"
@@ -68,7 +88,7 @@ function Register() {
           size="lg"
           colorScheme="green"
           mt="24px"
-          disabled={!(isEmailValid && isPasswordValid)}
+          disabled={!(isEmailValid && isPasswordValid && isUserNameValid)}
         >
           Create a free account
         </Button>
