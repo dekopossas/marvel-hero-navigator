@@ -1,11 +1,10 @@
 const express = require('express');
 require('dotenv').config();
-const bodyParser = require('body-parser');
 
-const PORT = process.env.PORT;
+const PORT = process.env.PORT || 3000;
 
 const app = express();
-app.use(bodyParser.json());
+app.use(express.json());
 
 app.use('/', userController);
 
