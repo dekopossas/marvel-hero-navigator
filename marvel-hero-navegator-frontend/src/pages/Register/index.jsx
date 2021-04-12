@@ -63,8 +63,26 @@ function Register() {
 
   const handleClickRegisterBtn = async () => {
     const response = await api.fetchRegistration(userName, email, password);
-    if (response) history.push('/login');
-    setUserExist('exist');
+    if (response) {
+      setUserExist('sucess');
+      setTimeout(history.push('/login'), 2000);
+    }
+    setUserExist(true);
+  };
+
+  const showAlert = (status) => {
+    if (status === 'exist') {
+      <Alert status="error">
+        <AlertIcon />
+        Email already registered!
+      </Alert>;
+    }
+    if (status === 'sucess') {
+      <Alert status="success">
+        <AlertIcon />
+        Accont Created!
+      </Alert>;
+    }
   };
 
   return (
@@ -97,6 +115,7 @@ function Register() {
         >
           Create a free account
         </Button>
+        {showAlert(userExist)}
       </Stack>
     </div>
   );
