@@ -15,7 +15,7 @@ function Register() {
   const [password, setPassword] = useState('');
   const [isPasswordValid, setIsPasswordValid] = useState(false);
 
-  const handleClick = () => setShow(!show);
+  const handleClickHideShowBtn = () => setShow(!show);
 
   const handleChangeEmail = (event, value) => {
     setEmail(value);
@@ -38,7 +38,7 @@ function Register() {
     }
   };
 
-  
+  const handleClickJoinBtn
 
   return (
     <div>
@@ -59,7 +59,7 @@ function Register() {
             onChange={handleChangePassword}
           />
           <InputRightElement width="4.5rem">
-            <Button h="1.75rem" size="sm" onClick={handleClick}>
+            <Button h="1.75rem" size="sm" onClick={handleClickHideShowBtn}>
               {show ? 'Hide' : 'Show'}
             </Button>
           </InputRightElement>
