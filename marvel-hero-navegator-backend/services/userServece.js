@@ -44,9 +44,16 @@ const validateFieldLogin = async (req, res, next) => {
 
 const getAllUsers = () => userModel.getAllUsers();
 
+const findByEmail = (email) => {
+  usersList = getAllUsers();
+  const emailFound = usersList.find((user) => user.email === email);
+  return emailFound;
+}
+
 module.exports = {
   validateUser,
   validateFieldName,
   validateFieldLogin,
   getAllUsers,
+  findByEmail,
 };
