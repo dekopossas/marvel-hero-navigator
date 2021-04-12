@@ -19,7 +19,8 @@ function Register() {
 
   const handleClickHideShowBtn = () => setShow(!show);
 
-  const handleChangeEmail = (event, value) => {
+  const handleChangeEmail = (event) => {
+    const { value } = event.target;
     setEmail(value);
     const regex = /^[\w-.]+@([\w-]+\.)+[\w-]{2,4}$/g;
     if (regex.test(value)) {
@@ -29,7 +30,8 @@ function Register() {
     }
   };
 
-  const handleChangePassword = (event, value) => {
+  const handleChangePassword = (event) => {
+    const { value } = event.target;
     setPassword(value);
     const PASSOWARD_MIN_LENGTH = 6;
 
@@ -40,7 +42,8 @@ function Register() {
     }
   };
 
-  const handleChangeName = (event, value) => {
+  const handleChangeName = (event) => {
+    const { value } = event.target;
     setUserName(value);
     const regex = /^[A-Za-z'\s]+$/;
     const MIN_NAME_LENGTH = 3;
