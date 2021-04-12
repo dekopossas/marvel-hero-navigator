@@ -6,7 +6,11 @@ import {
   Button,
   InputGroup,
   InputRightElement,
+  AlertIcon,
+  Alert,
 } from '@chakra-ui/react';
+import { useHistory } from 'react-router-dom';
+import api from '../../services/api';
 
 function Register() {
   const [show, setShow] = useState(false);
@@ -16,6 +20,9 @@ function Register() {
   const [isEmailValid, setIsEmailValid] = useState(false);
   const [password, setPassword] = useState('');
   const [isPasswordValid, setIsPasswordValid] = useState(false);
+  const [userExist, setUserExist] = useState('');
+
+  const history = useHistory();
 
   const handleClickHideShowBtn = () => setShow(!show);
 
@@ -55,23 +62,17 @@ function Register() {
   };
 
   const handleClickRegisterBtn = async () => {
-    const response = await api.fetchRegistration
-  }
+    const response = await api.fetchRegistration(userName, email, password);
+    if (response) history.push('/login');
+    setUserExist('exist');
+  };
 
   return (
     <div>
       <Stack spacing={3} align="center">
         <Text fontSize="5xl">Register</Text>
-        <Input
-          placeholder="Name"
-          width="300px"
-          onChange={handleChangeName}
-        />
-        <Input
-          placeholder="Email"
-          width="300px"
-          onChange={handleChangeEmail}
-        />
+        <Input placeholder="Name" width="300px" onChange={handleChangeName} />
+        <Input placeholder="Email" width="300px" onChange={handleChangeEmail} />
         <InputGroup size="md" width="300px">
           <Input
             pr="4.5rem"
@@ -91,6 +92,7 @@ function Register() {
           size="lg"
           colorScheme="green"
           mt="24px"
+          onClick={handleClickRegisterBtn}
           disabled={!(isEmailValid && isPasswordValid && isUserNameValid)}
         >
           Create a free account
