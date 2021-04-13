@@ -9,7 +9,7 @@ const options = (method, body = null) => ({
   body: body ? JSON.stringify(body) : undefined,
 });
 
-const URL_BASE = 'http://localhost:3001';
+const URL_BASE = 'http://back-api:3001';
 
 const getAll = async (url) => fetch(`${URL_BASE}/${url}`).then((e) => (e.json()));
 
@@ -24,7 +24,7 @@ const put = async (url, user) => fetch(`${URL_BASE}/${url}`, options('PUT', user
 const remove = async (url, user) => fetch(`${URL_BASE}/${url}`, options('DELETE', user))
   .then((e) => (e.json()));
 
-module.exports = {
+export default {
   getAll,
   getById,
   post,

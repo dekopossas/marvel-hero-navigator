@@ -62,7 +62,7 @@ function Register() {
   };
 
   const handleClickRegisterBtn = async () => {
-    const response = await api.fetchRegistration(name, email, password);
+    const response = await api.post('POST', { name, email, password });
     if (response) {
       setUserExist('sucess');
       setTimeout(history.push('/login'), 2000);
