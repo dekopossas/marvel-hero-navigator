@@ -26,7 +26,7 @@ const register = async (req, res) => {
     
     return res.status(CREATED).json({ user: userObj });
   } catch (err) {
-    return res.status(INTERNAL_ERROR).json({ message: error });
+    return res.status(INTERNAL_ERROR).json({ message: err });
   }
 };
 

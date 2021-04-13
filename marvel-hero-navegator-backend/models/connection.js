@@ -11,7 +11,7 @@ const getConnection = async (collectionName) =>{
   connection = 
     connection || 
       (await MongoClient.connect(MONGO_DB_URL, {
-        userNewUrlParser: true,
+        useNewUrlParser: true,
         useUnifiedTopology: true,
       }))
   return connection.db(DBNAME).collection(collectionName);
