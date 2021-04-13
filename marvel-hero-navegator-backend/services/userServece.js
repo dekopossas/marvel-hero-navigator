@@ -1,4 +1,4 @@
-const userModel = require('../models/user');
+const userModel = require('../models/userModel');
 
 const BAD_REQUEST = 400;
 
@@ -18,7 +18,7 @@ const validateName = (name) => {
   const MIN_NAME_LENGTH = 3;
   const nameLength = name.length >= MIN_NAME_LENGTH;
   const nameVerified = regexName.test(name);
-  return nameVerified && nameLength;
+  return (nameVerified && nameLength);
 }
 
 const validateFieldName = (req, res, next) => {
@@ -59,7 +59,6 @@ const createUser = async (name, email, password) => {
 }
 
 module.exports = {
-  validateUser,
   validateFieldName,
   validateFieldLogin,
   getAllUsers,

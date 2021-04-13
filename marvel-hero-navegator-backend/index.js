@@ -1,4 +1,5 @@
 const express = require('express');
+const userController = require('./controllers/userController');
 require('dotenv').config();
 
 const PORT = process.env.PORT || 3000;
