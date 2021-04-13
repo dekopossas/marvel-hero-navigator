@@ -3,7 +3,7 @@ const { MongoClient } = require('mongodb');
 require('dotenv').config();
 
 const DB_NAME = 'MarvelHeroNavegator';
-const MONGO_DB_URL = 'mongodb://localhost:27017/MarvelHeroNavegator';
+const MONGO_DB_URL = `${process.env.MONGO_DB_URL}/${DB_NAME}`;
 
 module.exports = () =>
   MongoClient
