@@ -2,7 +2,7 @@ const userModel = require('../models/userModel');
 
 const getAllUsers = async () => userModel.getAllUsers();
 
-const getUsersById = async (id) => cuserModel.getUsersById(id);
+const getUsersById = async (id) => userModel.getUsersById(id);
 
 const createUser = async (data) => userModel.createUser(data);
 
