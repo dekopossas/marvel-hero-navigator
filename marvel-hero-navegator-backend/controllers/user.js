@@ -1,5 +1,5 @@
 const jwt = require('jsonwebtoken');
-const userService = require('../services/userServece');
+const userService = require('../services/REMOVED');
 
 const secret = 'MarvelHeroNavegatorSecret';
 const jwtConfig = {
