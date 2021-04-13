@@ -7,7 +7,12 @@ const userRouter = require('./controllers/userController');
 
 const app = express();
 
-app.use(cors());
+const corsOptions = {
+  origin: 'https://localhost:3000',
+  method: 'GET,PUT,POST,DELETE',
+}
+
+app.use(cors(corsOptions));
 
 app.use(express.json());
 
