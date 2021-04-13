@@ -1,22 +1,33 @@
 const contentType = {
+  Accept: 'application/json',
   'Content-Type': 'application/json',
 };
 
-const fetchRegistration = async (name, email, password) => {
-  const response = await fetch('http://localhost:3001/register', {
-    method: 'POST',
-    headers: contentType,
-    body: JSON.stringify({
-      name,
-      email,
-      password,
-    }),
-  }).then((res) => res.json());
+const options = (method, body = null) => ({
+  method,
+  headers: contentType,
+  body: body ? JSON.stringify(body) : undefined,
+});
 
-  if (response.message) return false;
-  return true;
-};
+const URL_BASE = 'http://localhost:3001';
+
+const getAll = async (url) => fetch(`${URL_BASE}/${url}`).then((e) => (e.json()));
+
+const getById = async (url, id) => fetch(`${URL_BASE}/${url}/${id}`).then((e) => (e.json()));
+
+const post = async (url, user) => fetch(`${URL_BASE}/${url}`, options('POST', user))
+  .then((e) => (e.json()));
+
+const put = async (url, user) => fetch(`${URL_BASE}/${url}`, options('PUT', user))
+  .then((e) => (e.json()));
+
+const remove = async (url, user) => fetch(`${URL_BASE}/${url}`, options('DELETE', user))
+  .then((e) => (e.json()));
 
 module.exports = {
-  fetchRegistration,
+  getAll,
+  getById,
+  post,
+  put,
+  remove,
 };
