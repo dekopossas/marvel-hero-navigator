@@ -54,7 +54,7 @@ function Login() {
   };
 
   return (
-    <div className="text-center">
+    <div>
       <Stack spacing={3} align="center">
         <Text fontSize="5xl">Login</Text>
         <Input
