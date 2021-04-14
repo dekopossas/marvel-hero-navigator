@@ -1,11 +1,4 @@
 const userModel = require('../models/userModel');
-const jwt = require('jsonwebtoken');
-const secret = 'MarvelHeroNavegatorSecret';
-
-const jwtConfig = {
-  expiresIn: '7d',
-  algorithm: 'HS256',
-};
 
 const getAllUsers = async (_req, res) => {
   const response = await userModel.getAllUsers();
