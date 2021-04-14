@@ -12,7 +12,11 @@ const getAllUsers = async (_req, res) => {
   res.status(200).json(response);
 };
 
-const getUsersById = async (id) => userModel.getUsersById(id);
+const getUsersById = async (req, res) => {
+  const { id } = req.params;
+  const response = await userModel.getUsersById(id);
+  res.status(200).json(response);
+};
 
 const createUser = async (req, res) => {
   const { userName, email, password } = req.body;
@@ -22,9 +26,17 @@ const createUser = async (req, res) => {
   res.status(200).json({response});
 };
 
-const updateUser = async (data) => userModel.updateUser(data)
+const updateUser = async (req, res) => {
+  const { id, userName, email, password } = req.body;
+  const response = await userModel.updateUser({ id, userName, email, password });
+  res.status(200).json(response);
+};
   
-const deleteUser = async (id) => userModel.deleteUser(id);
+const deleteUser = async (req, res) => {
+  const { id } = req.body;
+  const response = await userModel.deleteUser(id);
+  res.status(200).json(response);
+};
 
 module.exports = {
   getAllUsers,
