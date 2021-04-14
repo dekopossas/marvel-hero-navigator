@@ -47,7 +47,7 @@ function Login() {
   };
 
   const handleClickLogin = async () => {
-    const response = await api.post('users', { email, password });
+    const response = await api.post('login', { email, password });
     if (response) {
       history.push('/home');
     }
