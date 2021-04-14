@@ -46,9 +46,9 @@ const validateFieldLogin = async (req, res, next) => {
 
 const getAllUsers = () => userModel.getAllUsers();
 
-const findByUserEmail = (email) => {
-  usersList = getAllUsers();
-  const emailFound = usersList.find((user) => user.email === email);
+const findByUserEmail = async (email) => {
+  usersList = await getAllUsers();
+  const emailFound =  usersList.find((user) => user.email === email);
   return emailFound;
 };
 

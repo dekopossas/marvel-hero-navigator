@@ -14,7 +14,7 @@ import api from '../../services/api';
 
 function Register() {
   const [show, setShow] = useState(false);
-  const [name, setName] = useState('');
+  const [userName, setUserName] = useState('');
   const [isNameValid, setIsNameValid] = useState(false);
   const [email, setEmail] = useState('');
   const [isEmailValid, setIsEmailValid] = useState(false);
@@ -51,7 +51,7 @@ function Register() {
 
   const handleChangeName = (event) => {
     const { value } = event.target;
-    setName(value);
+    setUserName(value);
     const regex = /^[A-Za-z'\s]+$/;
     const MIN_NAME_LENGTH = 3;
     if (regex.test(value) && value.length >= MIN_NAME_LENGTH) {
@@ -62,7 +62,7 @@ function Register() {
   };
 
   const handleClickRegisterBtn = async () => {
-    const response = await api.fetchRegistration(name, email, password);
+    const response = await api.post('users', { userName, email, password });
     if (response) {
       setUserExist('sucess');
       setTimeout(history.push('/login'), 2000);

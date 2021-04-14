@@ -1,5 +1,5 @@
 const jwt = require('jsonwebtoken');
-const userService = require('../services/userServece');
+const userModel = require('../models/userModel');
 
 const secret = 'MarvelHeroNavegatorSecret';
 const jwtConfig = {
@@ -16,7 +16,7 @@ const register = async (req, res) => {
     const {name, email, password} = req.body;
     
     const token = jwt.sign({ data: [email, password] }, secret, jwtConfig);
-    const user = await userService.findByUserEmail(email);
+    const user = await userModel.getAllUsers(email);
     if(user) return res.status(CONFLICT).json({ message: 'Email already in use.'});
     
     await userService.createUser(name, email, password);
@@ -26,7 +26,7 @@ const register = async (req, res) => {
     
     return res.status(CREATED).json({ user: userObj });
   } catch (err) {
-    return res.status(INTERNAL_ERROR).json({ message: error });
+    return res.status(INTERNAL_ERROR).json({ message: `quando eu resovler${err}` });
   }
 };
 

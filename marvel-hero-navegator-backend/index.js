@@ -1,12 +1,23 @@
 const express = require('express');
-const userController = require('./controllers/userController');
 require('dotenv').config();
 
-const PORT = process.env.PORT || 3000;
+const cors = require('cors');
+
+const userRouter = require('./controllers/userController');
 
 const app = express();
+
+// const corsOptions = {
+//   origin: 'https://localhost:3001',
+//   method: 'GET,PUT,POST,DELETE',
+// }
+
+app.use(cors());
+
 app.use(express.json());
 
-app.use('/', userController);
+const PORT = process.env.PORT || 3001;
+
+app.use('/users', userRouter);
 
 app.listen(PORT, () => console.log(`Ouvindo na porta ${PORT}`));

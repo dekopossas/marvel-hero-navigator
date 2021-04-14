@@ -1,14 +1,16 @@
 const { Router } = require('express');
-const user = require('./user');
-const userService = require('../services/userServece');
+const userService = require('../services/userService');
 
-const router = new Router();
+const userRouter = new Router();
 
-router.post(
-  '/register',
-  userService.validateFieldLogin,
-  userService.validateFieldName,
-  user.register
-);
+userRouter.get('/', userService.getAllUsers);
 
-module.exports = router;
+userRouter.get('/:id', userService.getUsersById);
+
+userRouter.post('/', userService.createUser);
+
+userRouter.put('/', userService.updateUser);
+
+userRouter.delete('/', userService.updateUser);
+
+module.exports = userRouter;
