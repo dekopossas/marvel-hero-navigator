@@ -1,6 +1,6 @@
 import React from 'react';
 import { ChakraProvider } from '@chakra-ui/react';
-import { BrowserRouter, Route, Redirect } from 'react-router-dom';
+import { BrowserRouter, Route } from 'react-router-dom';
 import Provider from './Context/Provider';
 import Login from './pages/Login';
 import Register from './pages/Register';
@@ -14,7 +14,7 @@ function App() {
           <Route exact path="/login" component={Login} />
           <Route exact path="/register" component={Register} />
           <Route exact path="/home" component={Home} />
-          <Redirect from="/" to="login" />
+          {/* <Redirect from="/" to="login" /> */}
         </Provider>
       </ChakraProvider>
     </BrowserRouter>
