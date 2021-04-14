@@ -31,6 +31,24 @@ const deleteUser = async (req, res) => {
   res.status(200).json(response);
 };
 
+const validateEmail = (email) => {
+  const regex = /^[\w-.]+@([\w-]+\.)+[\w-]{2,4}$/g;
+  const emailVerified = regex.test(email);
+  return emailVerified;
+};
+
+const validatePassword = (password) => {
+  const passwordVerified = password.length >= 6;
+  return passwordVerified;
+};
+
+const validateName = (name) => {
+  const regexName = /^[A-Za-z'\s]+$/;
+  const nameLength = name.length >= 3;
+  const nameVerified = regexName.test(name);
+  return nameLength && nameVerified;
+};
+
 const validateFieldLogin = async (req, res, next) => {
   const { email, password } = req.body;
 
