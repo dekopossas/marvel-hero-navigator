@@ -13,7 +13,9 @@ import { Link } from 'react-router-dom';
 
 function Login() {
   const [show, setShow] = React.useState(false);
-  const handleClick = () => setShow(!show);
+  const handleClickHideShowBtn = () => setShow(!show);
+
+  const handleClickLogin = () => {};
 
   return (
     <div className="text-center">
@@ -36,13 +38,19 @@ function Login() {
             id="password"
           />
           <InputRightElement width="4.5rem">
-            <Button h="1.75rem" size="sm" onClick={handleClick}>
+            <Button h="1.75rem" size="sm" onClick={handleClickHideShowBtn}>
               {show ? 'Hide' : 'Show'}
             </Button>
           </InputRightElement>
         </InputGroup>
         <Stack spacing={2} align="center">
-          <Button width="300px" colorScheme="green" type="button" data-testid="signin-btn">
+          <Button
+            width="300px"
+            colorScheme="green"
+            type="button"
+            data-testid="signin-btn"
+            onclick={handleClickLogin}
+          >
             <Link to="/home">Join</Link>
           </Button>
           <Button
