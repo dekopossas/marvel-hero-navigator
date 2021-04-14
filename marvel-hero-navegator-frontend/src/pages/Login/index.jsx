@@ -53,15 +53,17 @@ function Login() {
           >
             <Link to="/home">Join</Link>
           </Button>
-          <Button
-            width="300px"
-            colorScheme="blue"
-            to="/register"
-            data-testid="no-account-btn"
-            type="button"
-          >
-            <Link to="/register">Register</Link>
-          </Button>
+          <Link width="300px" to="/register">
+            <Button
+              width="300px"
+              colorScheme="blue"
+              to="/register"
+              data-testid="no-account-btn"
+              type="button"
+            >
+              Register
+            </Button>
+          </Link>
         </Stack>
         <HStack>
           <Button colorScheme="facebook" leftIcon={<FaFacebook />}>
