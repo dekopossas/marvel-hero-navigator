@@ -1,23 +1,24 @@
 const jwt = require('jsonwebtoken');
-const userModel = require('../models/userModel');
-
 const secret = 'MarvelHeroNavegatorSecret';
 
-module.exports = async (req, res, next) => {
-  const token = req.headers.authorization;
+const jwtConfig = {
+  expiresIn: '7d',
+  algorithm: 'HS256',
+};
 
-  if (!token) return res.status(401).json({ message: 'Token não encontrado!' });
+const jwtSign = (payload, jwtSecret, jwtConfig) => (
+  jwt.sign(payload, jwtSecret, jwtConfig)
+);
 
-  try {
-    const decoded = jwt.verify(token, secret);
-    const user = await userModel.getUsersById(decoded.data.email);
+const createJwt = (user) => ({
+  iss: 'MarvelApp',
+  aud: 'indentity',
+  userData: user,
+});
 
-    if (!user) return res.status(401).json({ message: 'erro ao procurar usuário token' });
-
-    req.user = user;
-
-    next();
-  } catch (error) {
-    return res.status(401).json({ message: 'erro ao procurar usuário token' });
-  }
+module.exports = {
+  secret,
+  jwtConfig,
+  jwtSign,
+  createJwt,
 };
