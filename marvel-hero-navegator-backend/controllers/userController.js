@@ -3,10 +3,7 @@ const userService = require('../services/userService');
 
 const userRouter = new Router();
 
-userRouter.get('/', async (_req, res) => {
-  const response = await userService.getAllUsers();
-  res.status(200).json(response);
-});
+userRouter.get('/', userService.getAllUsers);
 
 userRouter.get('/:id', async (req, res) => {
   const { id } = req.params;
@@ -14,11 +11,7 @@ userRouter.get('/:id', async (req, res) => {
   res.status(200).json(response);
 });
 
-userRouter.post('/', async (req, res) => {
-  const { userName, email, password } = req.body;
-  const response = await userService.createUser({ userName, email, password });
-  res.status(200).json(response);
-});
+userRouter.post('/', userService.createUser);
 
 userRouter.put('/', async (req, res) => {
   const { id, userName, email, password } = req.body;

@@ -9,7 +9,7 @@ const options = (method, body = null) => ({
   body: body ? JSON.stringify(body) : undefined,
 });
 
-const URL_BASE = 'http://localhost:3000';
+const URL_BASE = 'http://localhost:3001';
 
 const getAll = async (url) => fetch(`${URL_BASE}/${url}`).then((e) => (e.json()));
 
