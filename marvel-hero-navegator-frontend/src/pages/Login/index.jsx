@@ -54,7 +54,7 @@ function Login() {
   };
 
   return (
-    <div className="text-center">
+    <div>
       <Stack spacing={3} align="center">
         <Text fontSize="5xl">Login</Text>
         <Input
@@ -106,10 +106,14 @@ function Login() {
         </Stack>
         <HStack>
           <Button colorScheme="facebook" leftIcon={<FaFacebook />}>
-            Facebook
+            <Link to="/https://www.facebook.com/">
+              Facebook
+            </Link>
           </Button>
           <Button colorScheme="twitter" leftIcon={<FaTwitter />}>
-            Twitter
+            <Link to="https://twitter.com/">
+              Twitter
+            </Link>
           </Button>
         </HStack>
         <p className="mt-5 mb-3 text-muted">© Marvel Hero Navegator 2021</p>
