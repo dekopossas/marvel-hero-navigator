@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import {
   Text,
   Box,
@@ -6,8 +6,17 @@ import {
   Badge,
   // StarIcon,
 } from '@chakra-ui/react';
+import marvelApi from '../../services/marvelApi';
 
 function CardHero() {
+  const offsetHeros = 10;
+  const [allHeros, setAllHeros] = useState('');
+
+  useEffect(() => {
+    const heros = marvelApi.getAllCharacters(offsetHeros);
+    setAllHeros(heros);
+  }, []);
+
   const property = {
     imageUrl: 'https://bit.ly/2Z4KKcF',
     imageAlt: 'Rear view of modern home with pool',
@@ -21,6 +30,7 @@ function CardHero() {
 
   return (
     <div>
+      {console.log(allHeros)}
       <Text fontSize="5xl">Home</Text>
       <Box maxW="sm" borderWidth="1px" borderRadius="lg" overflow="hidden">
         <Image src={property.imageUrl} alt={property.imageAlt} />
