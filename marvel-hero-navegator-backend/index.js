@@ -18,6 +18,6 @@ app.use(express.json());
 
 const PORT = process.env.PORT || 3001;
 
-app.use('/users', userRouter);
+app.use('/', userRouter);
 
 app.listen(PORT, () => console.log(`Ouvindo na porta ${PORT}`));
