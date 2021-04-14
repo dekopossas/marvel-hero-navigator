@@ -1,16 +1,11 @@
 const { Router } = require('express');
+const user = require('./user');
 const userService = require('../services/userService');
 
 const userRouter = new Router();
 
-userRouter.get('/', userService.getAllUsers);
+userRouter.post('/register', userService.createUser);
 
-userRouter.get('/:id', userService.getUsersById);
-
-userRouter.post('/', userService.createUser);
-
-userRouter.put('/', userService.updateUser);
-
-userRouter.delete('/', userService.updateUser);
+userRouter.post('/login', userService.createUser);
 
 module.exports = userRouter;
