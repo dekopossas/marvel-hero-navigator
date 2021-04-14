@@ -5,9 +5,9 @@ const getAllUsers = async () => connect('users').then((db) => db.find().toArray(
 
 const getUsersById = async (id) => connect('users').then((db) => db.findOne(ObjectId(id)));
 
-const getUsersByEmail = async (email) => connect('users').then((db) => db.findOne(email));
+const getUsersByEmail = async (email) => connect('users').then((db) => db.findOne({email}));
 
-const createUser = async ({userName, email, password}) => connect('users')
+const createUser = async (userName, email, password) => connect('users')
   .then((db) => db.insertOne({userName, email, password}))
   .then((result) => ({ _id: result.insertedId, userName, email, password}));
 

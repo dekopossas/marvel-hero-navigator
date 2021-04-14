@@ -61,11 +61,11 @@ const validateFieldLogin = async (req, res, next) => {
 };
 
 const validateFieldName = (req, res, next) => {
-  const { name } = req.body;
+  const { userName } = req.body;
 
-  if (!name) return res.status(400).json({ message: 'All fields must be filled' });
+  if (!userName) return res.status(400).json({ message: 'All fields must be filled' });
 
-  if (!validateName(name)) return res.status(400).json({ message: 'incorrect' });
+  if (!validateName(userName)) return res.status(400).json({ message: 'incorrect' });
 
   next();
 };

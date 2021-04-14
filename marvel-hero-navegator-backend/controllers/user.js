@@ -10,6 +10,7 @@ const login = async (req, res) => {
   try {
     const { email, password } = req.body;
 
+    console.log(req.body);
     const user = await userModel.getUsersByEmail(email);
 
     if (!user || user.password !== password) {
@@ -20,13 +21,14 @@ const login = async (req, res) => {
 
     return res.status(200).json({ token, user });
   } catch (error) {
+    console.log(error)
     return res.status(500).json({ message: error });
   }
 };
 
 const register = async (req, res) => {
   try{
-    const {name, email, password} = req.body;
+    const {userName, email, password} = req.body;
     
     const token = authJWT.jwtSign({ data: [email, password] }, authJWT.secret, authJWT.jwtConfig);
 
@@ -35,10 +37,9 @@ const register = async (req, res) => {
       return res.status(CONFLICT).json({ message: 'Email already in use.' });
     };
 
-    await userModel.createUser(name, email, password);
+    await userModel.createUser(userName, email, password);
     
-    const findNewUser = await userModel.getUsersByEmail(email);
-    const userObj = { ...findNewUser, token };
+    const userObj = { userName, email, token };
     
     return res.status(CREATED).json({ user: userObj });
   } catch (err) {
