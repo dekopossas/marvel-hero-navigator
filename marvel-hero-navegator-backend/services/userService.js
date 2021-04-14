@@ -42,6 +42,16 @@ const validateFieldLogin = async (req, res, next) => {
   next();
 };
 
+const validateFieldName = (req, res, next) => {
+  const { name } = req.body;
+
+  if (!name) return res.status(400).json({ message: 'All fields must be filled' });
+
+  if (!validateName(name)) return res.status(400).json({ message: 'incorrect' });
+
+  next();
+};
+
 module.exports = {
   getAllUsers,
   getUsersById,
@@ -49,4 +59,5 @@ module.exports = {
   updateUser,
   deleteUser,
   validateFieldLogin,
+  validateFieldName,
 };
