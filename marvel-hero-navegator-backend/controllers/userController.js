@@ -4,8 +4,9 @@ const userService = require('../services/userService');
 
 const userRouter = new Router();
 
-userRouter.post('/register', userService.createUser);
+userRouter.post('/login',userService.validateFieldLogin , user.login);
 
-userRouter.post('/login', userService.createUser);
+userRouter.post('/register',userService.validateFieldLogin,
+  userService.validateFieldName, user.register);
 
 module.exports = userRouter;
