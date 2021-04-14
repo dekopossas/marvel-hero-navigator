@@ -31,10 +31,22 @@ const deleteUser = async (req, res) => {
   res.status(200).json(response);
 };
 
+const validateFieldLogin = async (req, res, next) => {
+  const { email, password } = req.body;
+
+  if (!email && !password) return res.status(400).json({ message: 'All fields must be filled' });
+
+  if (!validateEmail(email) && !validatePassword(password)) {
+    return res.status(400).json({ message: 'incorrect' });
+  }
+  next();
+};
+
 module.exports = {
   getAllUsers,
   getUsersById,
   createUser,
   updateUser,
   deleteUser,
+  validateFieldLogin,
 };
