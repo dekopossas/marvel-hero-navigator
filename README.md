@@ -5,10 +5,12 @@
 
 [Link de Deploy](http://ec2-54-82-34-19.compute-1.amazonaws.com/)
 
-Até o momento é possível cadastrar-se no sistema, logar e navegar pelos herois.
-Será capaz de favoritar seus herois, navegar e favoritar por suas comics.
+<p>Até o momento é possível cadastrar-se no sistema, logar e navegar pelos herois.</p>
+
+<p>Logo mais!</p>
+<p>Será capaz de favoritar seus herois, navegar e favoritar por suas comics.
 Todas as funções estaram salvas no seu login.
-Divulgar para seus amigos e muito mais.
+Divulgar para seus amigos e muito mais.</p>
 
 ## Clone e Install
 <p align="justify"> O projeto é aberto e qualquer um pode clonar e ultilizar. </p>
