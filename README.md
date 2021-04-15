@@ -15,7 +15,7 @@ Divulgar para seus amigos e muito mais.</p>
 ## Clone e Install
 <p align="justify"> O projeto é aberto e qualquer um pode clonar e ultilizar. </p>
 
-Entre em cada pagina e execute o comando npm install, 1 vez na pasta do backend e outra no frontend e divirta-se.
+Entre em cada pasta e execute o comando npm install, 1 vez na pasta do backend e outra no frontend e divirta-se.
 
 Qualquer dúvida estou a disposição para ajudar:
 
