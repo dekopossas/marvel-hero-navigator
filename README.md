@@ -1,4 +1,4 @@
-<h1 align="center"> Marvel-Hero-Navigator </h1>
+#  Marvel-Hero-Navigator
 
 ## Descrição do Projeto
 <p align="justify"> Projeto dedicado a teste de conhecimento práticos de JavaScript com React/Hooks, Node.js, jwt, Docker, AWS, Context API, Chakra UI e muitas outras curiosidades =D </p>
