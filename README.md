@@ -7,6 +7,10 @@
 
 <p>A aplicação consiste em gerenciar seus herois e quadrinhos favoritos.</p>
 
+## Licença
+
+[![NPM](https://img.shields.io/npm/l/react)](https://github.com/dekopossas/marvel-hero-navigator/blob/main/LICENSE)
+
 ## Clone e Install
 <p align="justify"> O projeto é aberto e qualquer um pode clonar e ultilizar. </p>
 
