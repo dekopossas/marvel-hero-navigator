@@ -33,11 +33,35 @@
 
 - AWS Cloud Computing
 
-## Clone e Install
-<p align="justify"> O projeto é aberto e qualquer um pode clonar e ultilizar. </p>
+## Como executar o projeto
 
-Entre em cada pasta e execute o comando npm install, 1 vez na pasta do backend e outra no frontend e divirta-se.
+```bash
+#clonar o repositório
+git clone git@github.com:dekopossas/marvel-hero-navigator.git
 
-Qualquer dúvida, estou a disposição para ajudar:
+#entrar na pasta do backend
+cd *backend
 
+#instale as dependências
+npm install
+
+#execute o projeto
+npm start
+
+#volte para a pasta principal do projeto
+cd ..
+
+#entre na pasta do frontend
+cd *frontend
+
+#instale as dependencias
+npm install
+
+#execute o projeto
+npm start
+```
+
+# Divirtasse!
+
+Qualquer dúvida estou a disposição
 https://www.linkedin.com/in/andrepossas/
