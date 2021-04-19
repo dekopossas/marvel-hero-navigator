@@ -20,6 +20,15 @@
 - ContextAPI
 - React Test Librery
 
+## Back end 
+
+- Arquitetura MSC
+- Node.js
+- MongoDB
+- JWT
+- Express
+- AWS
+
 ## Clone e Install
 <p align="justify"> O projeto é aberto e qualquer um pode clonar e ultilizar. </p>
 
