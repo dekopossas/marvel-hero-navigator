@@ -29,6 +29,10 @@
 - Express
 - AWS
 
+## Implementação
+
+- AWS Cloud Computing
+
 ## Clone e Install
 <p align="justify"> O projeto é aberto e qualquer um pode clonar e ultilizar. </p>
 
