@@ -61,7 +61,20 @@ npm install
 npm start
 ```
 
+# O que faz o projeto
+
+- [x] Cria uma conta
+- [x] Salva as informações no banco de dados
+- [x] Efetua o login
+- [ ] Navegar através dos herois
+- [ ] Ver seus quadrinhos
+- [ ] Favoritas seus herois
+- [ ] Favoritar seu quadrinhos
+- [ ] Editar seu perfil
+- [ ] Editar seus favoritos
+
 # Divirtasse!
 
 Qualquer dúvida estou a disposição
-https://www.linkedin.com/in/andrepossas/
+[André Possas](https://www.linkedin.com/in/andrepossas/)
+
