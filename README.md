@@ -3,7 +3,7 @@
 ## Descrição do Projeto
 <p align="justify">Marvel Hero Navegator é uma aplicação full stack web construída com o objetivo de testar as Habilidades de programação, organizado pela STONE.</p>
 
-[Link de Deploy](http://ec2-54-82-34-19.compute-1.amazonaws.com/)
+Link de Deploy removido do ar por motivos de cobrança 😅
 
 <p>A aplicação consiste em gerenciar seus herois e quadrinhos favoritos.</p>
 
